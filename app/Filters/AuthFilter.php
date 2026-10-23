@@ -10,13 +10,16 @@ class AuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (! session()->get('isLoggedIn')) {
+        if (!session()->get('isLoggedIn')) {
             return redirect()->to('/login');
         }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // No post-processing needed
     }
+}
+
+if (!class_exists('App\Filters\AuthGuard', false)) {
+    class_alias(AuthFilter::class, 'App\Filters\AuthGuard');
 }
