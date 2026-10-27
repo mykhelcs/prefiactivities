@@ -20,6 +20,3 @@ class AuthFilter implements FilterInterface
     }
 }
 
-if (!class_exists('App\Filters\AuthGuard', false)) {
-    class_alias(AuthFilter::class, 'App\Filters\AuthGuard');
-}

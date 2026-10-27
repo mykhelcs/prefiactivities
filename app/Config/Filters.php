@@ -37,7 +37,6 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'auth'          => AuthFilter::class,
-        'authguard'     => AuthGuard::class,
     ];
 
     /**
@@ -61,7 +60,7 @@ class Filters extends BaseFilters
         'after' => [
             'pagecache',   // Web Page Caching
             'performance', // Performance Metrics
-            'toolbar',     // Debug Toolbar
+            // 'toolbar',  // Debug Toolbar (disabled)
         ],
     ];
 
